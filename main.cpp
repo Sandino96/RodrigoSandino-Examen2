@@ -33,13 +33,13 @@ int main(int argc, char*argv[]){
 					if (convertido[i] != ' '){
 						if(convertido[i] >= 96 && convertido[i] < 120){
 							codigo = convertido[i] + 3;
-							encriptado[i] += codigo;
+							encriptado[i] = codigo;
 						} else {
 							codigo = convertido[i] - 3;
-							encriptado[i] += codigo;
+							encriptado[i] = codigo;
 						}
 					} else {
-						encriptado[i] += ' ';
+						encriptado[i] = ' ';
 					}
 				}
 			}
@@ -63,13 +63,13 @@ int main(int argc, char*argv[]){
 					if (convertido[i] != ' '){
 						if(convertido[i] >= 99 && convertido[i] < 123){
 							codigo = convertido[i] - 3;
-							desencriptado[i] += codigo;
+							desencriptado[i] = codigo;
 						} else {
 							codigo = convertido[i] + 3;
-							desencriptado[i] += codigo;
+							desencriptado[i] = codigo;
 						}
 					} else {
-						desencriptado[i] += ' ';
+						desencriptado[i] = ' ';
 					}
 				}
 			}
@@ -77,10 +77,6 @@ int main(int argc, char*argv[]){
 			delete[] convertido;
 			delete[] desencriptado;
 		} else if (opcion == 3){
-			char a = '4';
-			int ia = a - '0';
-			cout << a << endl;
-			cout << ia << endl;
 			string tarjetaCredito;
 			cout << "\tIngrese su numero de tarjeta de crédito (con confianza y solo números, ejemplo 0000111122223333):";
 			cin.ignore();
